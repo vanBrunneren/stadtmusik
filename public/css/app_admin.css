@@ -1,0 +1,42 @@
+body {
+    font-family: 'Lato';
+}
+
+.fa-btn {
+    margin-right: 6px;
+}
+
+.admin-home-button {
+	height: 100px;
+	background-color: #EEEEEE;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 10px;
+	border-radius: 4px;
+}
+
+.dashboard-icon {
+	margin-right: 10px;
+	font-size: 30px;
+}
+
+.dashboard-link:link {
+	color: #000000;
+	text-decoration: none;
+}
+
+.dashboard-link:visited {
+	color: #000000;
+	text-decoration: none;
+}
+
+.dashboard-link:hover {
+	color: #000000;
+	text-decoration: none;
+}
+
+.dashboard-link:active {
+	color: #000000;
+	text-decoration: none;
+}
