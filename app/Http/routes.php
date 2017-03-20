@@ -13,7 +13,7 @@
 
 Route::get('/SML', 'PublicController@sml');
 
-Route::get('/', 'PublicController@home');
+Route::get('/', 'PublicController@sml');
 Route::get('/Jubiläum', 'PublicController@celebration');
 Route::get('/Agenda', 'PublicController@agenda');
 
@@ -21,6 +21,7 @@ Route::get('/Kontakt', 'PublicController@contact');
 Route::post('/Kontakt', 'PublicController@contactSave');
 
 Route::get('/Portrait', 'PublicController@portrait');
+Route::get('/News', 'PublicController@news');
 Route::get('/Intern', 'PublicController@intern')->middleware('auth');
 
 Route::get('/admin', 'AdminController@index')->middleware('admin');

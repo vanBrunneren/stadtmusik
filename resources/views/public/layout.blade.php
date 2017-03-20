@@ -2,11 +2,7 @@
 <html>
 	<head>
 		<title>
-			@if(Request::is('SML'))
-				Stadtmusik Lenzburg
-			@else
-				Concertband Lenzburg
-			@endif
+			Stadtmusik Lenzburg
 		</title>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -38,11 +34,7 @@
 				<div class="header row">
 					<div class="col-lg-3 col-md-3 hidden-xs header-lg-left">
 						<a href="/">
-							@if(Request::is('SML'))
-								<img src="/images/sml_punkt.bmp" class="img-responsive">
-							@else
-								<img src="/images/logo.bmp" class="img-responsive">
-							@endif
+							<img src="/images/sml_punkt.bmp" class="img-responsive">
 						</a>
 					</div>
 					<div class="col-lg-9 col-md-9 hidden-sm hidden-xs text-right header_img">
@@ -62,11 +54,7 @@
 
 						<a href="/" class="mobile-header">
 							<h1 class="header-xs">
-								@if(Request::is('SML'))
-									Stadtmusik
-								@else
-									Concertband
-								@endif
+								Stadtmusik
 							</h1>
 						</a>
 					</div>
@@ -77,21 +65,7 @@
 
 					<div class="navigation row hidden-xs">
 						@foreach($navigation as $nav)
-							@if(Request::is('SML'))
-								@if($nav->name !== 'Home' AND $nav->name !== 'Intern')
-									<a href="{{ $nav->route }}">
-										<div class="col-lg-2 col-md-2 col-sm-2 text-center navigation-button">
-											{{ $nav->name }}
-											@if(Request::is($nav->name))
-												<div class="navigation-picker"></div>
-											@endif
-										</div>
-									</a>
-								@else
-									<div class="col-lg-2 col-md-2 col-sm-2 text-center navigation-button">		
-									</div>
-								@endif
-							@else
+							@if($nav->name !== 'Intern')
 								<a href="{{ $nav->route }}">
 									<div class="col-lg-2 col-md-2 col-sm-2 text-center navigation-button">
 										{{ $nav->name }}
@@ -107,23 +81,15 @@
 					<div class="mobile-navigation row">
 						<div class="col-xs-12">
 							@foreach($navigation as $nav)
-								@if(Request::is('SML'))
-									@if($nav->name !== 'Home' AND $nav->name !== 'Intern')
-										<div class="row">
-											<div class="col-xs-12 {{ Request::is($nav->name) ? 'menu-active' : '' }}">
-												<a class="menu-link" href="{{ $nav->route }}"><h4>{{ $nav->name }}</h4></a> 
-											</div>
-										</div>
-									@else
-										<div class="row">
-											<div class="col-xs-12">
-											</div>
-										</div>
-									@endif
-								@else
+								@if($nav->name !== 'Intern')
 									<div class="row">
 										<div class="col-xs-12 {{ Request::is($nav->name) ? 'menu-active' : '' }}">
 											<a class="menu-link" href="{{ $nav->route }}"><h4>{{ $nav->name }}</h4></a> 
+										</div>
+									</div>
+								@else
+									<div class="row">
+										<div class="col-xs-12">
 										</div>
 									</div>
 								@endif
@@ -142,11 +108,7 @@
 					<div class="hidden-xs col-lg-3 col-md-3 col-sm-4">
 						<div class="row">	
 							<div class="col-xs-12 text-center footer-text">
-								@if(Request::is('SML'))
-									&copy; 2016 stadtmusik-lenzburg.ch
-								@else
-									&copy; 2016 concertband-lenzburg.ch
-								@endif
+								&copy; 2017 stadtmusik-lenzburg.ch
 							</div>
 						</div>
 					</div>

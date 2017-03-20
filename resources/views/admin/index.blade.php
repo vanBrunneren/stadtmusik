@@ -26,6 +26,14 @@
 				</a>
 			</div>
 			<div class="col-xs-4">
+				<a class="dashboard-link" href="/admin/news/index">
+					<div class="admin-home-button">
+						<span class="glyphicon glyphicon-envelope dashboard-icon"></span>
+						News
+					</div>
+				</a>
+			</div>
+			<div class="col-xs-4">
 				<a class="dashboard-link" href="/admin/celebration/index">
 					<div class="admin-home-button">
 						<span class="glyphicon glyphicon-gift dashboard-icon"></span>

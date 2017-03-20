@@ -7,6 +7,7 @@ use App\Home;
 use App\Celebration;
 use App\Category;
 use App\Portrait;
+use App\News;
 use App\ContactForm;
 use App\Http\Requests;
 use DB;
@@ -26,6 +27,8 @@ class PublicController extends Controller
    	{
          $celebration = Celebration::first();
 
+         $celebration->text = str_replace("stadtmusik-lenzburg.ch", "concertband-lenzburg.ch", $celebration->text);
+
    		return view('public.celebration', compact('celebration'));
    	}
 
@@ -38,7 +41,9 @@ class PublicController extends Controller
                         ->select('*', 'cbl_agenda.id as id', 'cbl_agenda.name as name', 'cbl_category.name as category_name')
                         ->join('cbl_category', 'cbl_agenda.category_id', '=', 'cbl_category.id')
                         ->where('cbl_agenda.date', '>', date('Y-m-d H:i:s'))
-                        ->orderBy('date')
+                        ->whereNull('cbl_agenda.deleted_at')
+                        ->orderBy('cbl_category.sort')
+                        ->orderBy('cbl_agenda.date')
                         ->get();
 
 
@@ -52,6 +57,11 @@ class PublicController extends Controller
                }
             }
          }
+
+         usort($categories, function($a, $b) {
+             return $a['sort'] - $b['sort'];
+         });
+
 
    		return view('public.agenda', compact('agendas', 'categories'));
    	}
@@ -111,6 +121,13 @@ class PublicController extends Controller
       public function sml() 
       {
          return view('public.sml');
+      }
+
+      public function news() 
+      {
+         $news = News::orderBy('created_at', 'desc')->get();
+
+         return view('public.news', compact('news'));
       }
 
 }
