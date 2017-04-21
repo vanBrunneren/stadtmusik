@@ -41,7 +41,7 @@
 						<img src="/images/header_right.jpg">
 					</div>
 
-					<div class="col-xs-12 hidden-lg hidden-md hidden-sm">
+					<div class="col-xs-12 hidden-lg hidden-md hidden-sm colorized-header">
 						<div class="xs-button">
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>

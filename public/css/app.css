@@ -40,6 +40,7 @@ h1 {
 
 .header-lg-left {
 	padding: 15px;
+	height: 180px;
 }
 
 .flex-grow {
@@ -223,5 +224,9 @@ a {
 .sml-title {
 	height: 200px;
 	padding: 20px;
+}
+
+.colorized-header {
+	background-color: #84d1f1
 }
 
